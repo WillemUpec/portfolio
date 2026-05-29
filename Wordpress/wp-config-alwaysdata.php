@@ -28,8 +28,8 @@ define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 
 // Surcharges dynamiques d'URL pour le fonctionnement en ligne
-define( 'WP_HOME', 'https://dulormne.alwaysdata.net/td/wordpress' );
-define( 'WP_SITEURL', 'https://dulormne.alwaysdata.net/td/wordpress' );
+define( 'WP_HOME', 'https://dulormne.alwaysdata.net/td' );
+define( 'WP_SITEURL', 'https://dulormne.alwaysdata.net/td' );
 
 define( 'AUTH_KEY',         '8d0bbf25c726102af250ffab041be62c910e7149' );
 define( 'SECURE_AUTH_KEY',  'ecb681bdc2cfc75bef3dc3dc129103204bf910e2' );

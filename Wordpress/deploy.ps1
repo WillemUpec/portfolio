@@ -37,21 +37,31 @@ function Run-FtpCommand($method, $remotePath) {
     $response.Close()
 }
 
-Write-Host "Creating remote directory /www/TD1/wordpress/..."
-try {
-    Run-FtpCommand "MKD" "/www/TD1/wordpress/"
-    Write-Host "Directory created successfully."
-} catch {
-    Write-Host "Directory already exists or error: $_"
+Write-Host "Cleaning up old files in /www/TD1/..."
+$oldFiles = @(
+    "/www/TD1/index.php",
+    "/www/TD1/page2.php",
+    "/www/TD1/deploy.log",
+    "/www/TD1/deploy.ps1",
+    "/www/TD1/deploy.sh"
+)
+
+foreach ($file in $oldFiles) {
+    try {
+        Run-FtpCommand "DELE" $file
+        Write-Host "Deleted $file"
+    } catch {
+        Write-Host "Could not delete $file (might not exist): $_"
+    }
 }
 
-Upload-FtpFile "C:\Users\fegur\OneDrive\Images\Portofolio\Wordpress\wordpress.zip" "/www/TD1/wordpress/wordpress.zip"
-Upload-FtpFile "C:\Users\fegur\OneDrive\Images\Portofolio\Wordpress\unzip.php" "/www/TD1/wordpress/unzip.php"
-Upload-FtpFile "C:\Users\fegur\OneDrive\Images\Portofolio\Wordpress\db_import.php" "/www/TD1/wordpress/db_import.php"
-Upload-FtpFile "C:\Users\fegur\OneDrive\Images\Portofolio\Wordpress\wp-config-alwaysdata.php" "/www/TD1/wordpress/wp-config.php"
+Upload-FtpFile "C:\Users\fegur\OneDrive\Images\Portofolio\Wordpress\wordpress.zip" "/www/TD1/wordpress.zip"
+Upload-FtpFile "C:\Users\fegur\OneDrive\Images\Portofolio\Wordpress\unzip.php" "/www/TD1/unzip.php"
+Upload-FtpFile "C:\Users\fegur\OneDrive\Images\Portofolio\Wordpress\db_import.php" "/www/TD1/db_import.php"
+Upload-FtpFile "C:\Users\fegur\OneDrive\Images\Portofolio\Wordpress\wp-config-alwaysdata.php" "/www/TD1/wp-config.php"
 
-Write-Host "Extracting files on the server..."
-$unzipUri = "https://dulormne.alwaysdata.net/td/wordpress/unzip.php"
+Write-Host "Extracting files on the server root /www/TD1/..."
+$unzipUri = "https://dulormne.alwaysdata.net/td/unzip.php"
 try {
     $webClient = New-Object System.Net.WebClient
     $webClient.Headers.Add("User-Agent", "Mozilla/5.0")
@@ -62,7 +72,7 @@ try {
 }
 
 Write-Host "Importing database on the server..."
-$importUri = "https://dulormne.alwaysdata.net/td/wordpress/db_import.php"
+$importUri = "https://dulormne.alwaysdata.net/td/db_import.php"
 try {
     $webClient = New-Object System.Net.WebClient
     $webClient.Headers.Add("User-Agent", "Mozilla/5.0")
