@@ -1,0 +1,11 @@
+# Ignore OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore temporary or local logs
+*.log
+.bak
+wordpress/*.bak
+wordpress/wp-content/cache/
+wordpress/wp-content/backups/

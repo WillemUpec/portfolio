@@ -11,7 +11,7 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
     volumes:
-      - wordpress_data:/var/www/html
+      - ./wordpress:/var/www/html
 
   db:
     image: mysql:8.0
@@ -24,7 +24,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - db_data:/var/lib/mysql
+      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
 
 volumes:
-  wordpress_data:
   db_data:
