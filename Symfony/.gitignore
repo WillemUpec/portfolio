@@ -1,0 +1,3 @@
+# Ignorer les fichiers temporaires de deploiement
+project.zip
+db.sql
