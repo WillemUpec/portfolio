@@ -1,7 +1,0 @@
-"Une composition abstraite et ultra-minimaliste représentant des éléments technologiques ou des interfaces. Sur un fond noir absolu (#000000), on voit des lignes lumineuses fines (cyan, bleu électrique ou blanc pur) qui esquissent des formes géométriques : des fragments de grille, des courbes inspirées par des circuits imprimés, ou des contours d'éléments d'interface utilisateur (UI) sans remplissage.
-
-L'éclairage est en low-key lighting, créant une ambiance mystérieuse et futuriste. Les lignes lumineuses sont la seule source de lumière visible, elles semblent flotter dans l'obscurité. Il n'y a pas de sources lumineuses directes autres que ces lignes. Quelques reflets subtils et glacés peuvent apparaître sur une surface invisible ou dans l'espace, suggérant de la profondeur.
-
-L'image doit évoquer la technologie, la création digitale, le code, ou le design d'interface, mais de manière très stylisée et artistique, sans être encombrée d'écrans ou de personnages. L'accent est mis sur l'élégance, la précision et la structure.
-
-Style : Abstract, minimalist, sci-fi aesthetic, dark mode UI, grid art, light painting, digital art, high contrast black and white with subtle color accent, modern architecture, conceptual. L'ambiance générale est sophistiquée, énigmatique et professionnelle, parfaite pour un portfolio." Ajoute aussi une option au site pour le metre en mode sombre ou clair .
