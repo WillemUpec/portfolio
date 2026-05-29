@@ -487,6 +487,29 @@ header {
     line-height: 1.6;
 }
 
+.service-tags-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.service-tags-list span {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 4px 10px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-tags-list span {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.06);
+}
+
 /* Contact Section */
 .contact-container {
     display: flex;
