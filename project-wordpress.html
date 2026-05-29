@@ -111,24 +111,91 @@
             border-radius: 30px;
             font-size: 0.8rem;
         }
-        /* Screenshot Container Styling */
-        .screenshot-container {
+        /* Screenshots Gallery Styling */
+        .gallery-container {
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+        .main-screenshot {
             width: 100%;
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid var(--glass-border);
-            background: #000;
-            margin-bottom: 3rem;
+            background: #0d0d0d;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .screenshot-container:hover {
-            transform: scale(1.01);
-        }
-        .screenshot-container img {
+        .main-screenshot img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
+            transition: opacity 0.25s ease;
+        }
+        .thumbnails-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .thumbnail {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            flex-direction: column;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(40%);
+            transition: all 0.3s ease;
+        }
+        .thumbnail:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.03);
+        }
+        .thumbnail.active {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+        }
+        .thumbnail.active img {
+            filter: grayscale(0%);
+        }
+        .thumb-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(4px);
+        }
+        .thumbnail:hover .thumb-caption, .thumbnail.active .thumb-caption {
+            opacity: 1;
+        }
+        @media (max-width: 576px) {
+            .thumbnails-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -141,25 +208,48 @@
 
         <div class="detail-container">
             <!-- Capture d'écran réelle du site WordPress en production -->
-            <div class="screenshot-container">
-                <img src="assets/wordpress_screenshot.png" alt="Capture d'écran réelle du site WordPress de Willem Dulormne">
+            <div class="gallery-container">
+                <div class="main-screenshot">
+                    <img id="featured-screenshot" src="assets/Wordpress.png" alt="Site WordPress - Accueil Piano">
+                </div>
+                <div class="thumbnails-grid">
+                    <div class="thumbnail active" onclick="changeScreenshot('assets/Wordpress.png', this)">
+                        <img src="assets/Wordpress.png" alt="Site WordPress - Blog & Accueil">
+                        <span class="thumb-caption">Blog / Accueil</span>
+                    </div>
+                    <div class="thumbnail" onclick="changeScreenshot('assets/Wordpress1.png', this)">
+                        <img src="assets/Wordpress1.png" alt="Site WordPress - Pianistes de la semaine">
+                        <span class="thumb-caption">Pianistes</span>
+                    </div>
+                    <div class="thumbnail" onclick="changeScreenshot('assets/wordpress_screenshot_3.png', this)">
+                        <img src="assets/wordpress_screenshot_3.png" alt="Site WordPress - Page Contact">
+                        <span class="thumb-caption">Contact</span>
+                    </div>
+                    <div class="thumbnail" onclick="changeScreenshot('assets/wordpress_screenshot_4.png', this)">
+                        <img src="assets/wordpress_screenshot_4.png" alt="Site WordPress - Zoom sur Ryuichi Sakamoto">
+                        <span class="thumb-caption">Article Zoom</span>
+                    </div>
+                </div>
             </div>
 
             <div class="detail-header">
-                <h1 class="detail-title">WordPress • Déploiement & Migration</h1>
-                <p class="detail-subtitle">🌐 DevOps, Architecture CMS & Intégration en Production</p>
+                <h1 class="detail-title">WordPress • Site Thématique</h1>
+                <p class="detail-subtitle">🎓 Projet de fin de 1ère année — BUT MMI • CMS & Déploiement Web</p>
             </div>
 
             <div class="detail-grid">
                 <div class="detail-content">
                     <h3>Description du Projet</h3>
-                    <p>Ce projet consiste en la création, le déploiement et la personnalisation complète d'un site internet dynamique utilisant le CMS WordPress dans un cadre universitaire.</p>
+                    <p>Ce site WordPress a été réalisé en tant que projet de fin de première année de BUT MMI. Il s'agit d'un site thématique autour du piano et de la musique classique, conçu pour présenter des articles de blog, un portrait de la semaine (pianiste), et une page de contact. Ce projet m'a permis de maîtriser la création et la personnalisation complète d'un CMS WordPress, de la conception à la mise en ligne.</p>
                     
+                    <h3>Gestion des Rôles (de A à Z)</h3>
+                    <p>J'ai géré intégralement la gestion des rôles utilisateurs sur le site, de A à Z. Cela inclut la configuration des différents profils d'accès (Administrateur, Éditeur, Auteur, Abonné), la définition précise de leurs permissions, et la mise en place des restrictions d'accès au contenu et au tableau de bord WordPress selon chaque rôle.</p>
+
                     <h3>Phase 1 : Développement Local (Docker)</h3>
-                    <p>L'infrastructure locale a été entièrement orchestrée à l'aide de Docker et Docker Compose. Cette approche moderne a permis d'isoler le site WordPress et sa base de données MySQL dans des conteneurs distincts, garantissant un environnement de travail stable, reproductible et sécurisé.</p>
+                    <p>L'infrastructure locale a été entièrement orchestrée à l'aide de Docker et Docker Compose. Cette approche a permis d'isoler le site WordPress et sa base de données MySQL dans des conteneurs distincts, garantissant un environnement de développement stable, reproductible et fidèle à la production.</p>
 
                     <h3>Phase 2 : Déploiement en Ligne (Alwaysdata)</h3>
-                    <p>Le déploiement en ligne a été réalisé en transférant l'intégralité des fichiers WordPress par FTP sur le serveur d'hébergement Alwaysdata. La base de données a été exportée puis importée en ligne, et les configurations ont été adaptées pour assurer le bon fonctionnement du site et de tous ses liens sur le web.</p>
+                    <p>À l'issue du développement local, le site a été mis en production en transférant l'intégralité des fichiers WordPress par FTP sur le serveur Alwaysdata. La base de données a été exportée, puis réimportée en ligne avec correction des encodages, et toutes les configurations ont été adaptées pour garantir le bon fonctionnement du site sur le web.</p>
 
                     <a href="https://dulormne.alwaysdata.net/td/" class="cta-button" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1.5rem; text-decoration: none;">Visiter le site en ligne (Alwaysdata)</a>
                     <p style="font-size: 0.85rem; opacity: 0.5; margin-top: 0.8rem; font-style: italic;">Le site en ligne est entièrement opérationnel, fluide et optimisé pour tous les écrans.</p>
@@ -171,8 +261,8 @@
                         <p>Créateur du site (de A à Z)</p>
                     </div>
                     <div class="sidebar-item">
-                        <h4>Année</h4>
-                        <p>2024 - 2025 (BUT MMI)</p>
+                        <h4>Contexte</h4>
+                        <p>Fin de 1ère année — BUT MMI (2025)</p>
                     </div>
                     <div class="sidebar-item">
                         <h4>Outils & Tech</h4>
@@ -195,5 +285,20 @@
         <p>&copy; 2026 Portfolio Mystérieux. W.D - Tous droits réservés.</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+        function changeScreenshot(src, element) {
+            const featured = document.getElementById('featured-screenshot');
+            featured.style.opacity = '0';
+            
+            setTimeout(() => {
+                featured.src = src;
+                featured.style.opacity = '1';
+            }, 250);
+            
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
 </body>
 </html>
