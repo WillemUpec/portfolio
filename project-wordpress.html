@@ -159,7 +159,7 @@
                     <p>L'infrastructure locale a été entièrement orchestrée à l'aide de Docker et Docker Compose. Cette approche moderne a permis d'isoler le site WordPress et sa base de données MySQL dans des conteneurs distincts, garantissant un environnement de travail stable, reproductible et sécurisé.</p>
 
                     <h3>Phase 2 : Déploiement en Ligne (Alwaysdata)</h3>
-                    <p>La migration sur notre hébergeur Alwaysdata a nécessité l'adaptation de la base de données pour un fonctionnement en production. Un nettoyage de l'encodage a été appliqué pour assurer l'affichage parfait des accents français et des caractères spéciaux, et les permaliens du serveur Apache ont été configurés pour offrir une navigation fluide et intuitive.</p>
+                    <p>Le déploiement en ligne a été réalisé en transférant l'intégralité des fichiers WordPress par FTP sur le serveur d'hébergement Alwaysdata. La base de données a été exportée puis importée en ligne, et les configurations ont été adaptées pour assurer le bon fonctionnement du site et de tous ses liens sur le web.</p>
 
                     <a href="https://dulormne.alwaysdata.net/td/" class="cta-button" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1.5rem; text-decoration: none;">Visiter le site en ligne (Alwaysdata)</a>
                     <p style="font-size: 0.85rem; opacity: 0.5; margin-top: 0.8rem; font-style: italic;">Le site en ligne est entièrement opérationnel, fluide et optimisé pour tous les écrans.</p>
@@ -180,9 +180,9 @@
                             <span>Docker Compose</span>
                             <span>MySQL 8.0</span>
                             <span>Alwaysdata Cloud</span>
-                            <span>FTPS (Explicit SSL)</span>
+                            <span>Connexion FTP</span>
                             <span>Apache (.htaccess)</span>
-                            <span>PHP 8.2 (Database Repair)</span>
+                            <span>PHP 8.2</span>
                             <span>phpMyAdmin</span>
                         </div>
                     </div>
