@@ -608,3 +608,74 @@ footer p {
     font-size: 0.9rem;
     letter-spacing: 1px;
 }
+
+/* Custom Audio Player */
+.custom-audio-player {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.6rem 1rem;
+    border-radius: 30px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+[data-theme="light"] .custom-audio-player {
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.player-btn {
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.player-btn:hover {
+    transform: scale(1.1);
+}
+
+.player-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.player-progress {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+[data-theme="light"] .player-progress {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--text-color);
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+
+.player-time {
+    font-size: 0.8rem;
+    font-family: monospace;
+    opacity: 0.7;
+    min-width: 35px;
+    text-align: right;
+}

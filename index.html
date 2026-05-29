@@ -106,10 +106,24 @@
                 <div class="project-info">
                     <h4>Composition Piano</h4>
                     <p>Passionné de piano, je compose et joue régulièrement. La musique nourrit ma sensibilité créative dans tous mes projets.</p>
+                    
+                    <!-- Lecteur audio intégré -->
+                    <div class="custom-audio-player">
+                        <audio id="piano-audio" src="assets/composition.mp3"></audio>
+                        <button class="player-btn" id="play-pause-btn" aria-label="Play">
+                            <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                        </button>
+                        <div class="player-progress">
+                            <div class="progress-bar" id="progress-bar"></div>
+                        </div>
+                        <span class="player-time" id="player-time">0:00</span>
+                    </div>
+
                     <div class="project-tags">
                         <span>Piano</span>
                         <span>Composition</span>
-                        <span>Son</span>
+                        <span>Lecteur Audio</span>
                     </div>
                 </div>
             </div>
