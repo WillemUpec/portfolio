@@ -111,17 +111,19 @@
             border-radius: 30px;
             font-size: 0.8rem;
         }
-        .media-placeholder {
+        .video-container {
             width: 100%;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px dashed var(--glass-border);
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: #000;
             margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .video-container video {
+            display: block;
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -133,7 +135,13 @@
         <a href="index.html#work" class="back-link">← Retour au Portfolio</a>
 
         <div class="detail-container">
-            <div class="media-placeholder">👁️</div>
+            <!-- Lecteur Vidéo HTML5 Dynamique -->
+            <div class="video-container">
+                <video controls width="100%" height="auto" poster="assets/bg_abstract.png">
+                    <source src="assets/scary_video.mp4" type="video/mp4">
+                    Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
+                </video>
+            </div>
 
             <div class="detail-header">
                 <h1 class="detail-title">Scary Video — After Effects</h1>
