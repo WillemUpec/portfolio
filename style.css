@@ -132,6 +132,10 @@ header {
     opacity: 0;
     animation: fadeInUp 1s ease forwards 0.5s;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 [data-theme="light"] .hero-content {
