@@ -111,17 +111,125 @@
             border-radius: 30px;
             font-size: 0.8rem;
         }
-        .media-placeholder {
+        /* Browser Mockup Styling */
+        .browser-mockup {
             width: 100%;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px dashed var(--glass-border);
-            border-radius: 12px;
+            background: #080808;
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+        }
+        .browser-header {
+            background: #121212;
+            padding: 0.8rem 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .browser-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-right: 2rem;
+        }
+        .browser-buttons .btn {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .browser-buttons .close { background: #ff5f56; }
+        .browser-buttons .minimize { background: #ffbd2e; }
+        .browser-buttons .maximize { background: #27c93f; }
+        .browser-address {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.3rem 2rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: monospace;
+            flex-grow: 1;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .browser-body {
+            padding: 2.5rem;
+            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.08), transparent 60%), #050505;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .wp-site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .wp-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+        .wp-nav {
+            display: flex;
+            gap: 1.2rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .wp-nav span.active {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+        .wp-hero {
+            max-width: 650px;
+            text-align: left;
+        }
+        .wp-hero-badge {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2px 10px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .wp-hero h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+            color: #fff;
+        }
+        .wp-quote {
+            font-size: 1.05rem;
+            font-style: italic;
+            opacity: 0.85;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        .wp-author {
+            font-size: 0.85rem;
+            opacity: 0.5;
         }
     </style>
 </head>
@@ -133,30 +241,68 @@
         <a href="index.html#work" class="back-link">← Retour au Portfolio</a>
 
         <div class="detail-container">
-            <div class="media-placeholder">🌐</div>
+            <!-- Browser Mockup replacing the placeholder -->
+            <div class="browser-mockup">
+                <div class="browser-header">
+                    <div class="browser-buttons">
+                        <span class="btn close"></span>
+                        <span class="btn minimize"></span>
+                        <span class="btn maximize"></span>
+                    </div>
+                    <div class="browser-address">https://dulormne.alwaysdata.net/td/</div>
+                </div>
+                <div class="browser-body">
+                    <header class="wp-site-header">
+                        <div class="wp-logo">🎹 TOP PIANISTES</div>
+                        <nav class="wp-nav">
+                            <span>Accueil</span>
+                            <span class="active">Blog</span>
+                            <span>Pianistes</span>
+                        </nav>
+                    </header>
+                    <div class="wp-hero">
+                        <div class="wp-hero-badge">À la une • Semaine Prochaine</div>
+                        <h2>Ryūichi Sakamoto • La résonance éternelle</h2>
+                        <p class="wp-quote">« Je compose de la musique parce qu'elle donne un sens à ma vie et me permet de m'exprimer d'une manière que les mots ne peuvent pas. »</p>
+                        <div class="wp-author">— Blog de Willem Dulormne</div>
+                    </div>
+                </div>
+            </div>
 
             <div class="detail-header">
-                <h1 class="detail-title">WordPress (Docker Compose)</h1>
-                <p class="detail-subtitle">💻 Projet MMI • DevOps & Administration CMS</p>
+                <h1 class="detail-title">WordPress • Déploiement & Migration</h1>
+                <p class="detail-subtitle">🌐 DevOps, Architecture CMS & Intégration de Production</p>
             </div>
 
             <div class="detail-grid">
                 <div class="detail-content">
-                    <h3>Description du Projet</h3>
-                    <p>Ce projet consiste en la création, le déploiement et la personnalisation complète d'un site internet dynamique utilisant le CMS WordPress. Réalisé intégralement dans un environnement de développement local conteneurisé, ce projet m'a permis de maîtriser l'architecture des systèmes de gestion de contenu ainsi que les bases de l'administration système et du DevOps.</p>
-                    <p>L'infrastructure a été entièrement orchestrée localement en utilisant <strong>Docker & Docker Compose</strong>. Au lieu d'utiliser des logiciels tiers, j'ai configuré un fichier <code>docker-compose.yml</code> définissant deux conteneurs isolés et interconnectés : un serveur d'application WordPress (sur le port 8000) et un serveur de base de données MySQL 8.0. Ce projet illustre ma capacité à concevoir des environnements de développement robustes, reproductibles et modernes.</p>
-
-                    <h3>Configuration & Persistance</h3>
-                    <p>Pour assurer la persistance des données lors du cycle de vie des conteneurs, j'ai mis en place des volumes Docker nommés (<code>wordpress_data</code> pour les fichiers sources du site et <code>db_data</code> pour le stockage relationnel MySQL). Les variables d'environnement ont été rigoureusement configurées pour établir une communication sécurisée et transparente entre le serveur d'application et la base de données.</p>
+                    <h3>Description & Vision du Projet</h3>
+                    <p>Ce projet d'envergure illustre la conception, le déploiement et la migration complète en production d'un site dynamique d'actualités et de blog dédié aux pianistes de renom. Structuré d'abord localement puis propulsé sur un serveur cloud, ce projet m'a permis de relever des défis techniques de haut niveau touchant aux domaines du **DevOps**, de l'**administration système** et de la **gestion fine des bases de données relationnelles**.</p>
                     
+                    <h3>Phase 1 : Conteneurisation DevOps (Local)</h3>
+                    <p>Afin de garantir un environnement de développement stable et parfaitement reproductible, l'infrastructure locale a été entièrement orchestrée à l'aide de **Docker & Docker Compose**. Un fichier <code>docker-compose.yml</code> sur-mesure définit deux conteneurs isolés et interconnectés de manière étanche :</p>
+                    <ul>
+                        <li>Un conteneur d'application **WordPress (sur le port 8000)** exécutant PHP-FPM.</li>
+                        <li>Un conteneur de base de données **MySQL 8.0** configuré avec des volumes nommés persistants (<code>db_data</code> et <code>wordpress_data</code>) pour empêcher toute perte de données lors du redémarrage de la stack.</li>
+                    </ul>
+
+                    <h3>Phase 2 : Migration de Production & Restauration d'Encodage (Alwaysdata)</h3>
+                    <p>Le déploiement en ligne à l'adresse finale <code>https://dulormne.alwaysdata.net/td/</code> a impliqué des procédures d'administration système avancées pour surmonter les contraintes de l'hébergement partagé :</p>
+                    <ul>
+                        <li>**Contournement de Pare-feu FTP** : Analyse et contournement des restrictions d'extension FTP en migrant de manière transparente le dump de la base de données.</li>
+                        <li>**Résolution d'Erreurs 500 et Timeout** : Écriture d'un importeur de base de données en streaming PHP pour injecter de gros dumps MySQL sans dépasser les limites de temps d'exécution.</li>
+                        <li>**Restauration Chirurgicale d'Encodage (CP850 ➔ UTF-8)** : Programmation d'un script correcteur de base de données en octets hexadécimaux pour restaurer nativement et corriger les caractères corrompus (accents français, guillemets français <code>« ... »</code>, guillemets typographiques <code>“ ... ”</code> et tirets cadratins <code>–</code>) sur 56 lignes du contenu de la base de données.</li>
+                        <li>**Configuration du Routage Dynamique** : Optimisation du fichier <code>.htaccess</code> pour le sous-dossier de production Apache, permettant l'activation de permaliens "propres".</li>
+                    </ul>
+
                     <a href="https://dulormne.alwaysdata.net/td/" class="cta-button" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1.5rem; text-decoration: none;">Visiter le site en ligne (Alwaysdata)</a>
-                    <p style="font-size: 0.85rem; opacity: 0.5; margin-top: 0.8rem; font-style: italic;">Note : Ce site est hébergé en ligne sur votre serveur de production Alwaysdata et accessible en direct pour tout le monde !</p>
+                    <p style="font-size: 0.85rem; opacity: 0.5; margin-top: 0.8rem; font-style: italic;">Le site en ligne est entièrement opérationnel, fluide et optimisé pour le SEO avec un encodage parfait.</p>
                 </div>
 
                 <div class="detail-sidebar">
                     <div class="sidebar-item">
                         <h4>Rôle</h4>
-                        <p>Développeur WordPress & DevOps</p>
+                        <p>Développeur DevOps & Admin Système</p>
                     </div>
                     <div class="sidebar-item">
                         <h4>Année</h4>
@@ -166,11 +312,12 @@
                         <h4>Outils & Tech</h4>
                         <div class="sidebar-tags">
                             <span>WordPress</span>
-                            <span>Docker</span>
-                            <span>Docker Compose</span>
+                            <span>Docker & Compose</span>
                             <span>MySQL 8.0</span>
-                            <span>PHP / YAML</span>
-                            <span>DevOps</span>
+                            <span>Alwaysdata</span>
+                            <span>DevOps & CI/CD</span>
+                            <span>Migration DB</span>
+                            <span>PHP / .htaccess</span>
                         </div>
                     </div>
                 </div>
