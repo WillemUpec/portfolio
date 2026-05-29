@@ -169,10 +169,13 @@
         <h2 class="section-title">Let's Talk</h2>
         <div class="contact-container">
             <form class="contact-form" action="https://formsubmit.co/willem.dulormne@gmail.com" method="POST">
-                <!-- Protection anti-spam et redirection -->
+                <!-- Configuration formsubmit.co -->
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="Nouveau message depuis le Portfolio !">
-                
+                <input type="hidden" name="_next" value="https://willemupec.github.io/portfolio/?sent=1">
+                <input type="hidden" name="_autoresponse" value="Bonjour, merci pour votre message ! Je l'ai bien reçu et vous répondrai dans les plus brefs délais. — Willem Dulormne">
+                <input type="hidden" name="_template" value="box">
+
                 <div class="input-group">
                     <input type="text" id="name" name="Nom" placeholder=" " required>
                     <label for="name">Votre Nom</label>
