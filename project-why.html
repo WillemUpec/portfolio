@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet | Why — Vidéo Cinématique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-detail-section {
+            padding: 8rem 5% 4rem 5%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .back-link {
+            align-self: flex-start;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--text-color);
+            transform: translateX(-5px);
+        }
+        .detail-container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 4rem;
+            backdrop-filter: blur(15px);
+        }
+        .detail-header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 2rem;
+        }
+        .detail-title {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+        .detail-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+        @media (max-width: 768px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .detail-content h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        .detail-content p {
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .detail-sidebar {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            height: fit-content;
+        }
+        .sidebar-item {
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-item h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            margin-bottom: 0.5rem;
+        }
+        .sidebar-item p, .sidebar-item div {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .sidebar-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .sidebar-tags span {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+        }
+        .video-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: #000;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .video-container video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="overlay"></div>
+
+    <main class="project-detail-section">
+        <a href="index.html#work" class="back-link">← Retour au Portfolio</a>
+
+        <div class="detail-container">
+            <!-- Lecteur Vidéo HTML5 Dynamique -->
+            <div class="video-container">
+                <video controls width="100%" height="auto" poster="assets/why_thumb.png">
+                    <!-- Note : Ce fichier vidéo lourd de 236 Mo est exclu du dépôt Git par le .gitignore. 
+                         Il fonctionne en local de façon fluide. Pour la mise en ligne, vous pouvez l'héberger sur Alwaysdata 
+                         et remplacer l'adresse ici par son URL absolue, tout comme la vidéo de l'Arène d'Évry. -->
+                    <source src="assets/why_video.mp4" type="video/mp4">
+                    Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
+                </video>
+            </div>
+
+            <div class="detail-header">
+                <h1 class="detail-title">Why — Vidéo Cinématique</h1>
+                <p class="detail-subtitle">🎬 Projet Personnel • Montage Édit & Visual FX</p>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h3>Description du Projet</h3>
+                    <p>Ce projet est une création cinématique d'ambiance et de montage rythmique de plus de 3 minutes réalisée sous Adobe After Effects. Construit comme un "Édit" immersif et narratif, il explore des contrastes intenses de noir et blanc et de couleurs saturées pour susciter une forte tension dramatique.</p>
+                    <p>Le principal objectif artistique était de synchroniser précisément chaque coupe visuelle, chaque mouvement de caméra virtuelle et chaque pulsation lumineuse pour faire vivre le concept et captiver le spectateur du début à la fin de la séquence.</p>
+
+                    <h3>Techniques Clés</h3>
+                    <p>J'ai mis en place des effets de distorsions temporelles (Twixtor / Time Remapping) extrêmement précis pour manipuler le rythme des scènes. Un travail minutieux de colorimétrie (Color Grading cinématique) a été mené sous After Effects, accompagné d'effets visuels stylisés (lumières volumétriques, flous de caméra et sursauts d'énergie).</p>
+                </div>
+
+                <div class="detail-sidebar">
+                    <div class="sidebar-item">
+                        <h4>Rôle</h4>
+                        <p>Monteur Vidéo & VFX</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <h4>Année</h4>
+                        <p>2026</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <h4>Outils & Tech</h4>
+                        <div class="sidebar-tags">
+                            <span>After Effects</span>
+                            <span>Time Remapping</span>
+                            <span>Color Grading</span>
+                            <span>Montage Rythmique</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Portfolio Mystérieux. W.D - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

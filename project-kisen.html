@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet | Kisen — Publicité Promo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-detail-section {
+            padding: 8rem 5% 4rem 5%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .back-link {
+            align-self: flex-start;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--text-color);
+            transform: translateX(-5px);
+        }
+        .detail-container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 4rem;
+            backdrop-filter: blur(15px);
+        }
+        .detail-header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 2rem;
+        }
+        .detail-title {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+        .detail-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+        @media (max-width: 768px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .detail-content h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        .detail-content p {
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .detail-sidebar {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            height: fit-content;
+        }
+        .sidebar-item {
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-item h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            margin-bottom: 0.5rem;
+        }
+        .sidebar-item p, .sidebar-item div {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .sidebar-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .sidebar-tags span {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+        }
+        .video-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: #000;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .video-container video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="overlay"></div>
+
+    <main class="project-detail-section">
+        <a href="index.html#work" class="back-link">← Retour au Portfolio</a>
+
+        <div class="detail-container">
+            <!-- Lecteur Vidéo HTML5 Dynamique -->
+            <div class="video-container">
+                <video controls width="100%" height="auto" poster="assets/kisen_thumb.png">
+                    <source src="assets/kisen_video.mp4" type="video/mp4">
+                    Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
+                </video>
+            </div>
+
+            <div class="detail-header">
+                <h1 class="detail-title">Kisen — Publicité Promo</h1>
+                <p class="detail-subtitle">🎬 Projet MMI • Montage Publicitaire & Motion Graphics</p>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h3>Description du Projet</h3>
+                    <p>Ce projet consiste en la conception, l'animation et le montage d'un spot publicitaire et promotionnel dynamique pour la marque Kisen. D'une durée de 43 secondes, ce clip a été entièrement articulé sous Adobe After Effects pour accrocher instantanément le regard du spectateur.</p>
+                    <p>La direction artistique s'est orientée vers une esthétique moderne et épurée, combinant des typographies cinétiques massives, des transitions fluides et des effets d'impact pour souligner la force et l'énergie du produit.</p>
+
+                    <h3>Techniques Clés</h3>
+                    <p>J'ai développé des typographies cinétiques (Kinetic Typography) avancées, parfaitement synchronisées avec le rythme visuel global. De subtils effets de tremblement (shake/wiggle), de flou directionnel et de transitions géométriques confèrent au montage son aspect professionnel et percutant.</p>
+                </div>
+
+                <div class="detail-sidebar">
+                    <div class="sidebar-item">
+                        <h4>Rôle</h4>
+                        <p>Motion Designer & Monteur</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <h4>Année</h4>
+                        <p>2026</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <h4>Outils & Tech</h4>
+                        <div class="sidebar-tags">
+                            <span>After Effects</span>
+                            <span>Publicité Promo</span>
+                            <span>Kinetic Type</span>
+                            <span>Montage Dynamique</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Portfolio Mystérieux. W.D - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
