@@ -59,6 +59,16 @@ body {
     transition: background 0.5s ease;
 }
 
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
 header {
     display: flex;
     justify-content: space-between;

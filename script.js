@@ -9,10 +9,79 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleButton.addEventListener('click', () => {
         let currentTheme = rootItem.getAttribute('data-theme');
         let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
         rootItem.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
     });
+
+    // ── Particules tombantes ──────────────────────────────────────────
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let W = canvas.width  = window.innerWidth;
+    let H = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+        W = canvas.width  = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+    });
+
+    const PARTICLE_COUNT = 90;
+    const particles = [];
+
+    function rand(min, max) { return Math.random() * (max - min) + min; }
+
+    function createParticle() {
+        return {
+            x:      rand(0, W),
+            y:      rand(-H, 0),        // départ hors écran en haut
+            r:      rand(0.8, 2.5),     // rayon
+            speed:  rand(0.4, 1.2),     // vitesse de chute
+            drift:  rand(-0.3, 0.3),    // dérive horizontale
+            wave:   rand(0, Math.PI * 2), // phase d'oscillation
+            waveAmp: rand(0.2, 0.6),    // amplitude ondulation
+            alpha:  rand(0.15, 0.55),   // opacité
+        };
+    }
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const p = createParticle();
+        p.y = rand(0, H); // positions initiales réparties
+        particles.push(p);
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        const isDark = rootItem.getAttribute('data-theme') !== 'light';
+        const color  = isDark ? '255,255,255' : '0,0,0';
+
+        particles.forEach(p => {
+            // Mouvement
+            p.y += p.speed;
+            p.wave += 0.015;
+            p.x += p.drift + Math.sin(p.wave) * p.waveAmp;
+
+            // Réinitialiser quand sorti par le bas
+            if (p.y > H + 10) {
+                p.y = -10;
+                p.x = rand(0, W);
+            }
+            // Réinitialiser si sorti sur les côtés
+            if (p.x < -10) p.x = W + 10;
+            if (p.x > W + 10) p.x = -10;
+
+            // Dessin
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${color}, ${isDark ? p.alpha : p.alpha * 0.4})`;
+            ctx.fill();
+        });
+
+        requestAnimationFrame(draw);
+    }
+
+    draw();
+    // ─────────────────────────────────────────────────────────────────
 
     // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
