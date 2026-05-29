@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet | App Design — FlutterFlow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-detail-section {
+            padding: 8rem 5% 4rem 5%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .back-link {
+            align-self: flex-start;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--text-color);
+            transform: translateX(-5px);
+        }
+        .detail-container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 4rem;
+            backdrop-filter: blur(15px);
+        }
+        .detail-header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 2rem;
+        }
+        .detail-title {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+        .detail-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+        @media (max-width: 768px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .detail-content h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        .detail-content p {
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .detail-sidebar {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            height: fit-content;
+        }
+        .sidebar-item {
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-item h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            margin-bottom: 0.5rem;
+        }
+        .sidebar-item p, .sidebar-item div {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .sidebar-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .sidebar-tags span {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+        }
+        .media-placeholder {
+            width: 100%;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed var(--glass-border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="overlay"></div>
+
+    <main class="project-detail-section">
+        <a href="index.html#work" class="back-link">← Retour au Portfolio</a>
+
+        <div class="detail-container">
+            <div class="media-placeholder">📱</div>
+
+            <div class="detail-header">
+                <h1 class="detail-title">App Design — FlutterFlow</h1>
+                <p class="detail-subtitle">💻 Développement Mobile • UI/UX Design</p>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h3>Description du Projet</h3>
+                    <p>Ce projet illustre une démarche complète de design UI/UX et de développement d'application mobile à l'aide de la plateforme FlutterFlow. L'application a été conçue pour répondre à un besoin utilisateur concret en se focalisant sur l'ergonomie, la réactivité et la clarté visuelle.</p>
+                    <p>La première phase a consisté à réaliser des recherches utilisateurs et des wireframes basse fidélité sous Figma. Après avoir validé les parcours utilisateurs (User Flows) clés, j'ai élaboré un prototype interactif haute fidélité intégrant une palette moderne et une typographie structurée, avant d'attaquer l'intégration et la logique sous FlutterFlow.</p>
+
+                    <h3>Fonctionnalités Intégrées</h3>
+                    <p>L'application embarque une navigation fluide et intuitive par onglets, des animations de transitions soignées lors de l'accès aux fiches détaillées, ainsi qu'une gestion locale d'état pour conserver les préférences de l'utilisateur. Elle est entièrement adaptative pour s'afficher idéalement sur iOS et Android.</p>
+                </div>
+
+                <div class="detail-sidebar">
+                    <div class="sidebar-item">
+                        <h4>Rôle</h4>
+                        <p>UI/UX Designer & Développeur No-Code</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <h4>Année</h4>
+                        <p>2026</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <h4>Outils & Tech</h4>
+                        <div class="sidebar-tags">
+                            <span>FlutterFlow</span>
+                            <span>Figma</span>
+                            <span>UI/UX</span>
+                            <span>Prototypage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Portfolio Mystérieux. W.D - Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

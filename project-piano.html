@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet | Composition Piano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-detail-section {
+            padding: 8rem 5% 4rem 5%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .back-link {
+            align-self: flex-start;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--text-color);
+            transform: translateX(-5px);
+        }
+        .detail-container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 4rem;
+            backdrop-filter: blur(15px);
+        }
+        .detail-header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 2rem;
+        }
+        .detail-title {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+        .detail-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+        @media (max-width: 768px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .detail-content h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        .detail-content p {
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        .detail-sidebar {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            height: fit-content;
+        }
+        .sidebar-item {
+            margin-bottom: 1.5rem;
+        }
+        .sidebar-item h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            margin-bottom: 0.5rem;
+        }
+        .sidebar-item p, .sidebar-item div {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .sidebar-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .sidebar-tags span {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+        }
+        .media-placeholder {
+            width: 100%;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed var(--glass-border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* Spécifique Page Piano */
+        .piano-player-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="overlay"></div>
+
+    <main class="project-detail-section">
+        <a href="index.html#work" class="back-link">← Retour au Portfolio</a>
+
+        <div class="detail-container">
+            <div class="media-placeholder">🎹</div>
+
+            <div class="detail-header">
+                <h1 class="detail-title">Composition Piano</h1>
+                <p class="detail-subtitle">🎵 Audio & Musique • Sensibilité Sonore</p>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h3>Description du Projet</h3>
+                    <p>La musique est au cœur de mon processus de création. En tant que pianiste amateur et passionné de composition, je crée régulièrement des mélodies au piano qui viennent nourrir et rythmer mes autres travaux multimédias, notamment mes montages vidéos et mes designs d'interfaces.</p>
+                    <p>Pour moi, une bonne vidéo ou une interface interactive mémorable repose à 50% sur l'expérience sonore. Ce projet regroupe mes compositions originales et mes expérimentations sonores, pensées comme des bandes-son immersives pour des projets numériques.</p>
+
+                    <h3>Écouter la Composition</h3>
+                    <div class="piano-player-container">
+                        <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 1rem;">Cliquez sur lecture pour écouter un extrait de ma composition originale :</p>
+                        <!-- Lecteur audio intégré -->
+                        <div class="custom-audio-player">
+                            <audio id="piano-audio" src="assets/composition.mp3"></audio>
+                            <button class="player-btn" id="play-pause-btn" aria-label="Play">
+                                <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                            <div class="player-progress">
+                                <div class="progress-bar" id="progress-bar"></div>
+                            </div>
+                            <span class="player-time" id="player-time">0:00</span>
+                        </div>
+                    </div>
+
+                    <h3>Impact Multimédia</h3>
+                    <p>Avoir des compétences en composition audio me permet d'être totalement autonome sur le plan de la bande-son et du mixage de mes vidéos. Cela m'aide à synchroniser de façon chirurgicale l'image et le son pour créer un impact émotionnel fort auprès du spectateur.</p>
+                </div>
+
+                <div class="detail-sidebar">
+                    <div class="sidebar-item">
+                        <h4>Rôle</h4>
+                        <p>Compositeur & Pianiste</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <h4>Année</h4>
+                        <p>2026</p>
+                    </div>
+                    <div class="sidebar-item">
+                        <h4>Outils & Tech</h4>
+                        <div class="sidebar-tags">
+                            <span>Piano</span>
+                            <span>Logic Pro / FL Studio</span>
+                            <span>Mixage Audio</span>
+                            <span>Sound Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Portfolio Mystérieux. W.D - Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('piano-audio');
+            const playPauseBtn = document.getElementById('play-pause-btn');
+            const progressBar = document.getElementById('progress-bar');
+            const playerTime = document.getElementById('player-time');
+            const playIcon = playPauseBtn ? playPauseBtn.querySelector('.play-icon') : null;
+            const pauseIcon = playPauseBtn ? playPauseBtn.querySelector('.pause-icon') : null;
+
+            if (audio && playPauseBtn) {
+                playPauseBtn.addEventListener('click', () => {
+                    if (audio.paused) {
+                        audio.play();
+                        if (playIcon) playIcon.style.display = 'none';
+                        if (pauseIcon) pauseIcon.style.display = 'block';
+                    } else {
+                        audio.pause();
+                        if (playIcon) playIcon.style.display = 'block';
+                        if (pauseIcon) pauseIcon.style.display = 'none';
+                    }
+                });
+
+                audio.addEventListener('timeupdate', () => {
+                    const progress = (audio.currentTime / audio.duration) * 100;
+                    if (progressBar) progressBar.style.width = `${progress}%`;
+                    
+                    const minutes = Math.floor(audio.currentTime / 60);
+                    const seconds = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+                    if (playerTime) playerTime.textContent = `${minutes}:${seconds}`;
+                });
+
+                audio.addEventListener('ended', () => {
+                    if (playIcon) playIcon.style.display = 'block';
+                    if (pauseIcon) pauseIcon.style.display = 'none';
+                    if (progressBar) progressBar.style.width = '0%';
+                    if (playerTime) playerTime.textContent = '0:00';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
