@@ -45,7 +45,7 @@ body {
 }
 
 [data-theme="light"] .background-container {
-    filter: invert(1) hue-rotate(180deg) opacity(0.8);
+    filter: opacity(0.12) grayscale(100%);
 }
 
 .overlay {
