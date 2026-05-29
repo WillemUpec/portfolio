@@ -148,6 +148,9 @@
 
                     <h3>Configuration & Persistance</h3>
                     <p>Pour assurer la persistance des données lors du cycle de vie des conteneurs, j'ai mis en place des volumes Docker nommés (<code>wordpress_data</code> pour les fichiers sources du site et <code>db_data</code> pour le stockage relationnel MySQL). Les variables d'environnement ont été rigoureusement configurées pour établir une communication sécurisée et transparente entre le serveur d'application et la base de données.</p>
+                    
+                    <a href="http://localhost:8000" class="cta-button" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1.5rem; text-decoration: none;">Visiter le site local (Port 8000)</a>
+                    <p style="font-size: 0.85rem; opacity: 0.5; margin-top: 0.8rem; font-style: italic;">Note : L'adresse locale http://localhost:8000 est accessible une fois l'environnement conteneurisé démarré (docker compose up -d).</p>
                 </div>
 
                 <div class="detail-sidebar">
