@@ -111,125 +111,24 @@
             border-radius: 30px;
             font-size: 0.8rem;
         }
-        /* Browser Mockup Styling */
-        .browser-mockup {
+        /* Screenshot Container Styling */
+        .screenshot-container {
             width: 100%;
-            background: #080808;
-            border: 1px solid var(--glass-border);
             border-radius: 16px;
             overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: #000;
             margin-bottom: 3rem;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
         }
-        .browser-header {
-            background: #121212;
-            padding: 0.8rem 1.5rem;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        .screenshot-container:hover {
+            transform: scale(1.01);
         }
-        .browser-buttons {
-            display: flex;
-            gap: 0.5rem;
-            margin-right: 2rem;
-        }
-        .browser-buttons .btn {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .browser-buttons .close { background: #ff5f56; }
-        .browser-buttons .minimize { background: #ffbd2e; }
-        .browser-buttons .maximize { background: #27c93f; }
-        .browser-address {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 0.3rem 2rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.5);
-            font-family: monospace;
-            flex-grow: 1;
-            text-align: center;
-            max-width: 500px;
-            margin: 0 auto;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        .browser-body {
-            padding: 2.5rem;
-            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.08), transparent 60%), #050505;
-            color: #ffffff;
-            font-family: 'Outfit', sans-serif;
-            min-height: 250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .wp-site-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        .wp-logo {
-            font-size: 1.1rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #ffffff;
-        }
-        .wp-nav {
-            display: flex;
-            gap: 1.2rem;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        .wp-nav span.active {
-            color: var(--accent-color);
-            font-weight: 700;
-        }
-        .wp-hero {
-            max-width: 650px;
-            text-align: left;
-        }
-        .wp-hero-badge {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--accent-color);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 2px 10px;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        .wp-hero h2 {
-            font-size: 1.8rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-            color: #fff;
-        }
-        .wp-quote {
-            font-size: 1.05rem;
-            font-style: italic;
-            opacity: 0.85;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            border-left: 2px solid var(--accent-color);
-            padding-left: 1rem;
-        }
-        .wp-author {
-            font-size: 0.85rem;
-            opacity: 0.5;
+        .screenshot-container img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
     </style>
 </head>
@@ -241,32 +140,9 @@
         <a href="index.html#work" class="back-link">← Retour au Portfolio</a>
 
         <div class="detail-container">
-            <!-- Browser Mockup replacing the placeholder -->
-            <div class="browser-mockup">
-                <div class="browser-header">
-                    <div class="browser-buttons">
-                        <span class="btn close"></span>
-                        <span class="btn minimize"></span>
-                        <span class="btn maximize"></span>
-                    </div>
-                    <div class="browser-address">https://dulormne.alwaysdata.net/td/</div>
-                </div>
-                <div class="browser-body">
-                    <header class="wp-site-header">
-                        <div class="wp-logo">🎹 TOP PIANISTES</div>
-                        <nav class="wp-nav">
-                            <span>Accueil</span>
-                            <span class="active">Blog</span>
-                            <span>Pianistes</span>
-                        </nav>
-                    </header>
-                    <div class="wp-hero">
-                        <div class="wp-hero-badge">À la une • Semaine Prochaine</div>
-                        <h2>Ryūichi Sakamoto • La résonance éternelle</h2>
-                        <p class="wp-quote">« Je compose de la musique parce qu'elle donne un sens à ma vie et me permet de m'exprimer d'une manière que les mots ne peuvent pas. »</p>
-                        <div class="wp-author">— Blog de Willem Dulormne</div>
-                    </div>
-                </div>
+            <!-- Capture d'écran réelle du site WordPress en production -->
+            <div class="screenshot-container">
+                <img src="assets/wordpress_screenshot.png" alt="Capture d'écran réelle du site WordPress de Willem Dulormne">
             </div>
 
             <div class="detail-header">
