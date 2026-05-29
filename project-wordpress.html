@@ -271,38 +271,28 @@
 
             <div class="detail-header">
                 <h1 class="detail-title">WordPress • Déploiement & Migration</h1>
-                <p class="detail-subtitle">🌐 DevOps, Architecture CMS & Intégration de Production</p>
+                <p class="detail-subtitle">🌐 DevOps, Architecture CMS & Intégration en Production</p>
             </div>
 
             <div class="detail-grid">
                 <div class="detail-content">
-                    <h3>Description & Vision du Projet</h3>
-                    <p>Ce projet d'envergure illustre la conception, le déploiement et la migration complète en production d'un site dynamique d'actualités et de blog dédié aux pianistes de renom. Structuré d'abord localement puis propulsé sur un serveur cloud, ce projet m'a permis de relever des défis techniques de haut niveau touchant aux domaines du **DevOps**, de l'**administration système** et de la **gestion fine des bases de données relationnelles**.</p>
+                    <h3>Description du Projet</h3>
+                    <p>Ce projet consiste en la création, le déploiement et la personnalisation complète d'un site internet dynamique utilisant le CMS WordPress, dédié à l'actualité musicale et aux pianistes de renom.</p>
                     
-                    <h3>Phase 1 : Conteneurisation DevOps (Local)</h3>
-                    <p>Afin de garantir un environnement de développement stable et parfaitement reproductible, l'infrastructure locale a été entièrement orchestrée à l'aide de **Docker & Docker Compose**. Un fichier <code>docker-compose.yml</code> sur-mesure définit deux conteneurs isolés et interconnectés de manière étanche :</p>
-                    <ul>
-                        <li>Un conteneur d'application **WordPress (sur le port 8000)** exécutant PHP-FPM.</li>
-                        <li>Un conteneur de base de données **MySQL 8.0** configuré avec des volumes nommés persistants (<code>db_data</code> et <code>wordpress_data</code>) pour empêcher toute perte de données lors du redémarrage de la stack.</li>
-                    </ul>
+                    <h3>Phase 1 : Développement Local (Docker)</h3>
+                    <p>L'infrastructure locale a été entièrement orchestrée à l'aide de Docker et Docker Compose. Cette approche moderne a permis d'isoler le site WordPress et sa base de données MySQL dans des conteneurs distincts, garantissant un environnement de travail stable, reproductible et sécurisé.</p>
 
-                    <h3>Phase 2 : Migration de Production & Restauration d'Encodage (Alwaysdata)</h3>
-                    <p>Le déploiement en ligne à l'adresse finale <code>https://dulormne.alwaysdata.net/td/</code> a impliqué des procédures d'administration système avancées pour surmonter les contraintes de l'hébergement partagé :</p>
-                    <ul>
-                        <li>**Contournement de Pare-feu FTP** : Analyse et contournement des restrictions d'extension FTP en migrant de manière transparente le dump de la base de données.</li>
-                        <li>**Résolution d'Erreurs 500 et Timeout** : Écriture d'un importeur de base de données en streaming PHP pour injecter de gros dumps MySQL sans dépasser les limites de temps d'exécution.</li>
-                        <li>**Restauration Chirurgicale d'Encodage (CP850 ➔ UTF-8)** : Programmation d'un script correcteur de base de données en octets hexadécimaux pour restaurer nativement et corriger les caractères corrompus (accents français, guillemets français <code>« ... »</code>, guillemets typographiques <code>“ ... ”</code> et tirets cadratins <code>–</code>) sur 56 lignes du contenu de la base de données.</li>
-                        <li>**Configuration du Routage Dynamique** : Optimisation du fichier <code>.htaccess</code> pour le sous-dossier de production Apache, permettant l'activation de permaliens "propres".</li>
-                    </ul>
+                    <h3>Phase 2 : Déploiement en Ligne (Alwaysdata)</h3>
+                    <p>La migration sur notre hébergeur Alwaysdata a nécessité l'adaptation de la base de données pour un fonctionnement en production. Un nettoyage de l'encodage a été appliqué pour assurer l'affichage parfait des accents français et des caractères spéciaux, et les permaliens du serveur Apache ont été configurés pour offrir une navigation fluide et intuitive.</p>
 
                     <a href="https://dulormne.alwaysdata.net/td/" class="cta-button" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1.5rem; text-decoration: none;">Visiter le site en ligne (Alwaysdata)</a>
-                    <p style="font-size: 0.85rem; opacity: 0.5; margin-top: 0.8rem; font-style: italic;">Le site en ligne est entièrement opérationnel, fluide et optimisé pour le SEO avec un encodage parfait.</p>
+                    <p style="font-size: 0.85rem; opacity: 0.5; margin-top: 0.8rem; font-style: italic;">Le site en ligne est entièrement opérationnel, fluide et optimisé pour tous les écrans.</p>
                 </div>
 
                 <div class="detail-sidebar">
                     <div class="sidebar-item">
                         <h4>Rôle</h4>
-                        <p>Développeur DevOps & Admin Système</p>
+                        <p>Développeur WordPress & DevOps</p>
                     </div>
                     <div class="sidebar-item">
                         <h4>Année</h4>
@@ -315,9 +305,9 @@
                             <span>Docker & Compose</span>
                             <span>MySQL 8.0</span>
                             <span>Alwaysdata</span>
-                            <span>DevOps & CI/CD</span>
+                            <span>DevOps</span>
                             <span>Migration DB</span>
-                            <span>PHP / .htaccess</span>
+                            <span>PHP / Apache</span>
                         </div>
                     </div>
                 </div>
