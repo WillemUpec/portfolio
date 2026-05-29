@@ -29,61 +29,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Message de confirmation après envoi du formulaire (?sent=1)
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('sent') === '1') {
-        // Créer le bandeau de confirmation
-        const banner = document.createElement('div');
-        banner.id = 'success-banner';
-        banner.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>Message envoyé ! Je vous répondrai très vite.</span>
-            <button onclick="this.parentElement.remove()" style="background:none;border:none;color:inherit;cursor:pointer;font-size:1.2rem;line-height:1;padding:0;margin-left:auto;opacity:0.7;">×</button>
-        `;
-        banner.style.cssText = `
-            position: fixed;
-            top: 90px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255,255,255,0.12);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.25);
-            color: #fff;
-            padding: 14px 24px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.95rem;
-            z-index: 9999;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-            animation: slideDown 0.4s ease;
-            min-width: 320px;
-        `;
-        document.body.appendChild(banner);
+    // Formulaire de contact — envoi AJAX (sans quitter la page)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-        // Ajouter l'animation CSS
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideDown {
-                from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
-                to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+            const btn = document.getElementById('submit-btn');
+            const feedback = document.getElementById('form-feedback');
+
+            // État chargement
+            btn.disabled = true;
+            btn.textContent = 'Envoi en cours…';
+            feedback.style.display = 'none';
+
+            const formData = {
+                Nom: document.getElementById('name').value,
+                Email: document.getElementById('email').value,
+                Message: document.getElementById('message').value,
+                _subject: 'Nouveau message depuis le Portfolio !',
+                _captcha: 'false'
+            };
+
+            try {
+                const res = await fetch('https://formsubmit.co/ajax/willem.dulormne@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await res.json();
+
+                if (data.success === 'true' || data.success === true) {
+                    // Succès
+                    feedback.style.cssText = 'display:flex;align-items:center;gap:10px;margin-top:1rem;padding:14px 20px;border-radius:12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);font-size:0.95rem;';
+                    feedback.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg> Message envoyé ! Je vous répondrai très vite.`;
+                    contactForm.reset();
+                    btn.textContent = 'Envoyer';
+                    btn.disabled = false;
+                } else {
+                    throw new Error('Echec');
+                }
+            } catch (err) {
+                // Erreur
+                feedback.style.cssText = 'display:flex;align-items:center;gap:10px;margin-top:1rem;padding:14px 20px;border-radius:12px;background:rgba(255,80,80,0.12);border:1px solid rgba(255,80,80,0.3);font-size:0.95rem;color:#ff9090;';
+                feedback.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg> Erreur lors de l'envoi. Réessayez ou écrivez directement à willem.dulormne@gmail.com`;
+                btn.textContent = 'Envoyer';
+                btn.disabled = false;
             }
-        `;
-        document.head.appendChild(style);
-
-        // Disparaît automatiquement après 6s
-        setTimeout(() => banner.remove(), 6000);
-
-        // Nettoyer l'URL sans recharger la page
-        window.history.replaceState({}, '', window.location.pathname);
-
-        // Scroller vers la section contact
-        setTimeout(() => {
-            const contactSection = document.getElementById('contact');
-            if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
-        }, 300);
+        });
     }
 
     // Lecteur Audio Personnalisé
