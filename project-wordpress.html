@@ -136,24 +136,24 @@
             <div class="media-placeholder">🌐</div>
 
             <div class="detail-header">
-                <h1 class="detail-title">Site WordPress (Local)</h1>
-                <p class="detail-subtitle">💻 Projet MMI • Webmastering & Gestion de contenu CMS</p>
+                <h1 class="detail-title">WordPress (Docker Compose)</h1>
+                <p class="detail-subtitle">💻 Projet MMI • DevOps & Administration CMS</p>
             </div>
 
             <div class="detail-grid">
                 <div class="detail-content">
                     <h3>Description du Projet</h3>
-                    <p>Ce projet consiste en la création, le déploiement et la personnalisation complète d'un site internet dynamique utilisant le CMS WordPress. Réalisé intégralement dans un environnement de développement local, ce projet m'a permis de maîtriser l'architecture des systèmes de gestion de contenu et les fondamentaux du webmastering.</p>
-                    <p>Le site a été propulsé localement en utilisant des serveurs virtuels Apache/Nginx et MySQL avec LocalWP. Cette installation m'a offert un contrôle total sur la base de données WordPress et m'a permis d'expérimenter diverses configurations de performances et de sécurité sans contrainte d'hébergement distant.</p>
+                    <p>Ce projet consiste en la création, le déploiement et la personnalisation complète d'un site internet dynamique utilisant le CMS WordPress. Réalisé intégralement dans un environnement de développement local conteneurisé, ce projet m'a permis de maîtriser l'architecture des systèmes de gestion de contenu ainsi que les bases de l'administration système et du DevOps.</p>
+                    <p>L'infrastructure a été entièrement orchestrée localement en utilisant <strong>Docker & Docker Compose</strong>. Au lieu d'utiliser des logiciels tiers, j'ai configuré un fichier <code>docker-compose.yml</code> définissant deux conteneurs isolés et interconnectés : un serveur d'application WordPress (sur le port 8000) et un serveur de base de données MySQL 8.0. Ce projet illustre ma capacité à concevoir des environnements de développement robustes, reproductibles et modernes.</p>
 
-                    <h3>Personnalisation et Fonctionnalités</h3>
-                    <p>J'ai procédé à la sélection et à l'adaptation minutieuse de thèmes WordPress modernes et adaptatifs (responsive). Au-delà de la personnalisation visuelle (CSS personnalisé, gestion de la typographie et des mises en page), j'ai intégré et configuré plusieurs extensions clés pour le SEO, la sécurité, et le confort de navigation de l'utilisateur final.</p>
+                    <h3>Configuration & Persistance</h3>
+                    <p>Pour assurer la persistance des données lors du cycle de vie des conteneurs, j'ai mis en place des volumes Docker nommés (<code>wordpress_data</code> pour les fichiers sources du site et <code>db_data</code> pour le stockage relationnel MySQL). Les variables d'environnement ont été rigoureusement configurées pour établir une communication sécurisée et transparente entre le serveur d'application et la base de données.</p>
                 </div>
 
                 <div class="detail-sidebar">
                     <div class="sidebar-item">
                         <h4>Rôle</h4>
-                        <p>Webmaster & Concepteur Web</p>
+                        <p>Développeur WordPress & DevOps</p>
                     </div>
                     <div class="sidebar-item">
                         <h4>Année</h4>
@@ -163,10 +163,11 @@
                         <h4>Outils & Tech</h4>
                         <div class="sidebar-tags">
                             <span>WordPress</span>
-                            <span>LocalWP</span>
-                            <span>MySQL</span>
-                            <span>PHP / CSS</span>
-                            <span>CMS</span>
+                            <span>Docker</span>
+                            <span>Docker Compose</span>
+                            <span>MySQL 8.0</span>
+                            <span>PHP / YAML</span>
+                            <span>DevOps</span>
                         </div>
                     </div>
                 </div>
