@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Formulaire de contact — envoi AJAX (sans quitter la page)
+    // Formulaire de contact — Web3Forms (fiable, sans quitter la page)
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
@@ -43,40 +43,35 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.textContent = 'Envoi en cours…';
             feedback.style.display = 'none';
 
-            const formData = {
-                Nom: document.getElementById('name').value,
-                Email: document.getElementById('email').value,
-                Message: document.getElementById('message').value,
-                _subject: 'Nouveau message depuis le Portfolio !',
-                _captcha: 'false'
-            };
-
             try {
-                const res = await fetch('https://formsubmit.co/ajax/willem.dulormne@gmail.com', {
+                const formData = new FormData(contactForm);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                const res = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     },
-                    body: JSON.stringify(formData)
+                    body: json
                 });
 
                 const data = await res.json();
 
-                if (data.success === 'true' || data.success === true) {
+                if (res.ok && data.success) {
                     // Succès
-                    feedback.style.cssText = 'display:flex;align-items:center;gap:10px;margin-top:1rem;padding:14px 20px;border-radius:12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);font-size:0.95rem;';
+                    feedback.style.cssText = 'display:flex;align-items:center;gap:10px;margin-top:1.2rem;padding:14px 20px;border-radius:12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);font-size:0.95rem;';
                     feedback.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg> Message envoyé ! Je vous répondrai très vite.`;
                     contactForm.reset();
-                    btn.textContent = 'Envoyer';
-                    btn.disabled = false;
                 } else {
-                    throw new Error('Echec');
+                    throw new Error(data.message || 'Erreur inconnue');
                 }
             } catch (err) {
                 // Erreur
-                feedback.style.cssText = 'display:flex;align-items:center;gap:10px;margin-top:1rem;padding:14px 20px;border-radius:12px;background:rgba(255,80,80,0.12);border:1px solid rgba(255,80,80,0.3);font-size:0.95rem;color:#ff9090;';
-                feedback.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg> Erreur lors de l'envoi. Réessayez ou écrivez directement à willem.dulormne@gmail.com`;
+                feedback.style.cssText = 'display:flex;align-items:center;gap:10px;margin-top:1.2rem;padding:14px 20px;border-radius:12px;background:rgba(255,80,80,0.12);border:1px solid rgba(255,80,80,0.3);font-size:0.95rem;color:#ff9090;';
+                feedback.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg> Erreur lors de l'envoi. Écris-moi directement : willem.dulormne@gmail.com`;
+            } finally {
                 btn.textContent = 'Envoyer';
                 btn.disabled = false;
             }
