@@ -773,3 +773,204 @@ footer p {
     color: var(--text-color);
     transform: translateX(6px);
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   HEADER RIGHT & HAMBURGER
+═══════════════════════════════════════════════════════════════ */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 200;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--text-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Croix quand ouvert */
+.menu-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ═══════════════════════════════════════════════════════════════
+   TABLET — max-width: 1024px
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        letter-spacing: 4px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE — max-width: 768px
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    /* ── Header ── */
+    header {
+        padding: 1.2rem 5%;
+    }
+
+    .desktop-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.97);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        z-index: 150;
+    }
+
+    .desktop-nav.open {
+        display: flex;
+    }
+
+    .desktop-nav a {
+        font-size: 1.8rem;
+        letter-spacing: 6px;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 200;
+    }
+
+    /* ── Hero ── */
+    .hero-title {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-content {
+        padding: 1rem 1.5rem;
+    }
+
+    .cta-button {
+        padding: 10px 28px;
+        font-size: 0.8rem;
+    }
+
+    /* ── Sections ── */
+    .projects-section,
+    .about-section,
+    .services-section,
+    .contact-section {
+        padding: 2.5rem 5%;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    /* ── Grille projets → 1 colonne ── */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .category-title {
+        margin: 2rem 0 1rem 0;
+    }
+
+    /* ── Grille services → 1 colonne ── */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    /* ── À propos ── */
+    .about-content {
+        gap: 2rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    /* ── Contact ── */
+    .contact-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-form {
+        flex: 1 1 auto;
+    }
+
+    .contact-info h3 {
+        font-size: 1.4rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+        padding: 2rem 0;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SMALL MOBILE — max-width: 480px
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+
+    .glitch-text, .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}

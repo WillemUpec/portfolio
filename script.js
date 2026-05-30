@@ -13,6 +13,26 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', newTheme);
     });
 
+    // ── Menu hamburger (mobile) ───────────────────────────────────
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav    = document.getElementById('main-nav');
+
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('open');
+            mainNav.classList.toggle('open');
+        });
+
+        // Ferme le menu au clic sur un lien
+        mainNav.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('open');
+                mainNav.classList.remove('open');
+            });
+        });
+    }
+    // ─────────────────────────────────────────────────────────────
+
     // ── Particules tombantes ──────────────────────────────────────────
     const canvas = document.getElementById('particles-canvas');
     const ctx = canvas.getContext('2d');
