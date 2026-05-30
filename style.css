@@ -2,7 +2,7 @@
     --bg-color: #000000;
     --text-color: #ffffff;
     --accent-color: #ffffff;
-    --overlay-color: rgba(0, 0, 0, 0.75);
+    --overlay-color: rgba(0, 0, 0, 0.50);
     --glass-bg: rgba(255, 255, 255, 0.0);
     --glass-border: rgba(255, 255, 255, 0.07);
 }
@@ -41,12 +41,12 @@ body {
     background-position: center;
     background-attachment: fixed;
     z-index: -2;
-    filter: brightness(0.12) grayscale(60%);
+    filter: brightness(0.35) grayscale(40%);
     transition: filter 0.8s ease;
 }
 
 [data-theme="light"] .background-container {
-    filter: brightness(0.06) grayscale(100%);
+    filter: brightness(0.15) grayscale(100%);
 }
 
 .overlay {
