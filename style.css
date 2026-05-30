@@ -153,12 +153,13 @@ header {
 }
 
 .hero-title {
-    font-size: 4.5rem;
+    font-size: clamp(1.3rem, 5vw, 4.5rem);
     font-weight: 200;
-    letter-spacing: 6px;
+    letter-spacing: clamp(2px, 1vw, 6px);
     margin-bottom: 1.2rem;
     text-transform: uppercase;
     color: var(--text-color);
+    word-break: break-word;
 }
 
 .subtitle {
@@ -874,12 +875,14 @@ footer p {
 
     /* ── Hero ── */
     .hero-title {
-        font-size: 2rem;
-        letter-spacing: 3px;
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+        word-break: break-word;
     }
 
     .subtitle {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
     }
 
     .hero-content {
@@ -958,19 +961,19 @@ footer p {
 ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 1.6rem;
-        letter-spacing: 2px;
+        font-size: 1.15rem;
+        letter-spacing: 1px;
     }
 
     .glitch-text, .hero-title {
-        font-size: 1.6rem;
+        font-size: 1.15rem;
     }
 
     .logo {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 }
