@@ -328,16 +328,27 @@ header {
     margin-bottom: 0.5rem;
     color: var(--text-color);
     display: flex;
-    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: wrap;
     align-items: baseline;
 }
 
 .project-date {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 300;
-    opacity: 0.35;
+    opacity: 0.55;
     font-family: monospace;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.detail-title .project-date {
+    font-size: 0.6em;
+    font-weight: 300;
+    opacity: 0.45;
+    margin-left: 10px;
+    white-space: nowrap;
+    font-family: monospace;
 }
 
 .project-info p {
