@@ -234,70 +234,24 @@
 
             <div class="detail-header">
                 <h1 class="detail-title">AquaSite • Symfony & D3.js</h1>
-                <p class="detail-subtitle">Discipline : Développement Web Full-Stack & Conception UI/UX • BUT MMI S3 & S4 (SAE)</p>
+                <p class="detail-subtitle">BUT MMI S3 & S4 • Développement Web Full-Stack & UI/UX</p>
             </div>
 
             <div class="detail-grid">
                 <div class="detail-content">
-                    <!-- SECTION BRIEF -->
-                    <div class="academic-section">
-                        <h3 class="academic-heading"><span>b.</span> Le Brief Client</h3>
-                        <p>AquaSite est une application web métier réalisée en collaboration directe avec des étudiants et enseignants-chercheurs de la filière Génie Biologique (GB) de l'Université. La demande consistait à concevoir un outil robuste simplifiant et fiabilisant la saisie, l'archivage et l'analyse visuelle des relevés physico-chimiques (température, pH, nitrites, etc.) de leurs aquariums d'études.</p>
-                        
-                        <div class="brief-meta">
-                            <div class="meta-badge">
-                                <span class="badge-label">Cible :</span>
-                                <span class="badge-val">Étudiants (saisie quotidienne) et enseignants GB (supervision et administration)</span>
-                            </div>
-                            <div class="meta-badge">
-                                <span class="badge-label">Contraintes :</span>
-                                <span class="badge-val">Sécurité par rôles, API REST, graphiques dynamiques D3.js et conteneurisation Docker</span>
-                            </div>
-                            <div class="meta-badge">
-                                <span class="badge-label">Délai :</span>
-                                <span class="badge-val">Projet d'envergure mené sur 2 semestres (SAE S3 & S4)</span>
-                            </div>
-                        </div>
-                    </div>
+                    <p><strong>Le Brief :</strong> Collaborer en binôme avec la filière Génie Biologique (GB) pour concevoir une application web métier sécurisée d'envergure, permettant de suivre en temps réel les relevés physico-chimiques (pH, température, etc.) de leurs aquariums pédagogiques d'études.</p>
+                    
+                    <p><strong>La Réalisation :</strong></p>
+                    <ul>
+                        <li>Ateliers agiles UX avec les biologistes pour définir les besoins métiers et les seuils d'alertes.</li>
+                        <li>Back-end Symfony avec base de données MySQL sous Docker, incluant une gestion stricte des privilèges par rôles.</li>
+                        <li>Création d'une API REST alimentant des tableaux de bord interactifs de séries temporelles codés en D3.js.</li>
+                    </ul>
 
-                    <!-- SECTION PROCESSUS -->
-                    <div class="academic-section">
-                        <h3 class="academic-heading"><span>c.</span> Le Processus Créatif</h3>
-                        <div class="process-steps">
-                            <div class="process-step">
-                                <h4 class="process-step-title">1. Ateliers de Co-conception (Agilité)</h4>
-                                <p class="process-step-desc">Rencontres avec les biologistes pour appréhender leurs méthodes de travail en laboratoire, définir les seuils d'alertes par espèce et modéliser le parcours utilisateur idéal.</p>
-                            </div>
-                            <div class="process-step">
-                                <h4 class="process-step-title">2. Architecture MVC & Sécurisation (Back-end)</h4>
-                                <p class="process-step-desc">Modélisation MySQL sous Docker. Conception du back-end sous Symfony, développement du système d'authentification robuste et mise en place des restrictions par rôles (Guard / Voter).</p>
-                            </div>
-                            <div class="process-step">
-                                <h4 class="process-step-title">3. Visualisation de Données interactive (D3.js)</h4>
-                                <p class="process-step-desc">Développement d'une API REST Symfony retournant les relevés au format JSON. Intégration de D3.js côté client pour dessiner de superbes graphiques temporels interactifs mis à jour en temps réel.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="https://github.com/Ylefaw/AquaSite" class="cta-button" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; text-decoration: none;">Voir le projet sur GitHub</a>
+                    <p style="font-size: 0.8rem; opacity: 0.45; margin-top: 0.6rem; font-style: italic; margin-bottom: 2rem;">Nécessite la CLI Symfony pour fonctionner en local.</p>
 
-                    <!-- SECTION PROPOSITION (LIVRABLE) -->
-                    <div class="academic-section">
-                        <h3 class="academic-heading"><span>d.</span> La Proposition (Livrable)</h3>
-                        <p>La proposition finale est une application web métier, réactive et ergonomique, dotée d'un tableau de bord clair-obscur ultra-moderne facilitant la détection immédiate des anomalies d'eau. La galerie interactive ci-dessus présente des captures d'écran réelles de l'application en production.</p>
-                        
-                        <a href="https://github.com/Ylefaw/AquaSite" class="cta-button" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; text-decoration: none;">Voir le projet sur GitHub</a>
-                        <p style="font-size: 0.8rem; opacity: 0.45; margin-top: 0.6rem; font-style: italic;">Nécessite la CLI Symfony pour fonctionner en local.</p>
-                    </div>
-
-                    <!-- SECTION RÉSULTAT & AUTO-ÉVALUATION -->
-                    <div class="academic-section">
-                        <h3 class="academic-heading"><span>e.</span> Résultat & Auto-Évaluation</h3>
-                        <p>L'outil est plébiscité par la filière Génie Biologique : il élimine définitivement les erreurs de saisie sur papier et offre un suivi statistique instantané des écosystèmes d'études.</p>
-                        
-                        <div class="self-evaluation-box">
-                            <h4 class="self-evaluation-title">Auto-évaluation des Compétences (BUT 2 MMI)</h4>
-                            <p class="self-evaluation-desc">Cette réalisation majeure valide mes compétences du pôle <strong>Développement Web & Dispositifs Interactifs</strong>. J'ai prouvé ma capacité à structurer une application MVC complexe sous Symfony, à configurer des workflows de sécurité stricts (rôles), à manipuler des volumes de données structurées et à les valoriser visuellement avec D3.js pour répondre à un besoin scientifique concret.</p>
-                        </div>
-                    </div>
+                    <p style="font-style: italic; opacity: 0.7;"><strong>Compétences BUT 2 MMI :</strong> Développement Web, base de données relationnelle et datavisualisation interactive. Conception d'un workflow sécurisé et gestion de projet agile avec clients réels.</p>
                 </div>
 
                 <div class="detail-sidebar">
