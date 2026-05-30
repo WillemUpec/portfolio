@@ -815,6 +815,144 @@ footer p {
 .menu-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 /* ═══════════════════════════════════════════════════════════════
+   ACADEMIC PROJECT GRID SYSTEM (BUT 2 MMI)
+═══════════════════════════════════════════════════════════════ */
+.academic-section {
+    margin-bottom: 3.5rem;
+}
+
+.academic-heading {
+    font-size: 1.3rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-color) !important;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.5rem;
+}
+
+.academic-heading span {
+    font-family: monospace;
+    font-size: 0.9rem;
+    opacity: 0.5;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Brief Meta Badges */
+.brief-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.meta-badge {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.badge-label {
+    opacity: 0.4;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.badge-val {
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+/* Process steps / Timeline */
+.process-steps {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 1.5px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    margin-top: 1.5rem;
+}
+
+.process-step {
+    position: relative;
+}
+
+.process-step::before {
+    content: '';
+    position: absolute;
+    left: calc(-1.5rem - 6.5px);
+    top: 5px;
+    width: 11px;
+    height: 11px;
+    background: var(--bg-color);
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.process-step-title {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    margin: 0 0 0.4rem 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.process-step-desc {
+    font-size: 0.95rem !important;
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+/* Self-Evaluation Box */
+.self-evaluation-box {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 1.8rem;
+    margin-top: 2rem;
+}
+
+.self-evaluation-title {
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.self-evaluation-title::before {
+    content: '★';
+    color: var(--accent-color);
+    font-size: 1rem;
+}
+
+.self-evaluation-desc {
+    font-size: 0.95rem !important;
+    opacity: 0.75;
+    line-height: 1.6;
+    margin-bottom: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    TABLET — max-width: 1024px
 ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
