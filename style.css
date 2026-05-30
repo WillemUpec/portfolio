@@ -97,7 +97,14 @@ header {
     letter-spacing: 4px;
     color: var(--text-color);
     text-shadow: 0 0 10px rgba(255,255,255,0.2);
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo:hover {
+    opacity: 0.75;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 .theme-toggle {
