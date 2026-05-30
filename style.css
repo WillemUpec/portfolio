@@ -220,6 +220,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    scroll-margin-top: 110px;
 }
 
 .section-title {
@@ -420,6 +421,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    scroll-margin-top: 110px;
 }
 
 .about-content {
