@@ -1,0 +1,31 @@
+@function randomNum($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+  @return $randomNum;
+}
+
+$base-color: #ddd;
+$shine-color: #e8e8e8;
+$animation-duration: 1.6s;
+@mixin background-gradient {
+  background-image: linear-gradient(90deg, $base-color 0px, $shine-color 40px, $base-color 80px);
+  background-size: 600px;
+}
+.rsssl-datatable-placeholder {
+  div {
+    background-color:var(--rsp-grey-300);
+    height:25px;
+    &:nth-child(even) {
+        background-color:#fff;
+    }
+  }
+}
+
+.rsssl-rest-error-message {
+  margin:30px;
+  ul {
+    list-style:disc;
+    margin:20px;
+  }
+}

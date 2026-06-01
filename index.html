@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willem Dulormne</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3.5">
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="overlay"></div>
+    <canvas id="particles-canvas"></canvas>
+    
+    <header>
+        <a href="#" class="logo">W.D</a>
+        <nav class="desktop-nav" id="main-nav">
+            <a href="#about" class="nav-link">À Propos</a>
+            <a href="#work" class="nav-link">Projets</a>
+            <a href="#services" class="nav-link">Compétences</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-right">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Créateur Multimédia</h1>
+            <p class="subtitle">Montage Vidéo & Web</p>
+            <a href="#work" class="cta-button">Découvrir</a>
+        </div>
+    </main>
+
+    <section id="work" class="projects-section">
+        <h2 class="section-title">Mes Projets</h2>
+        
+        <div class="category-title">
+            <h3>Création & Montage Vidéo</h3>
+        </div>
+        <div class="projects-grid">
+            <a href="project-kisen.html" class="project-card video-card">
+                <img src="assets/kisen_thumb.png" alt="Aperçu Kisen — Publicité Promo" class="project-image-preview">
+                <div class="project-info">
+                    <h4>Kisen — Publicité Promo <span class="project-date">· 2025</span></h4>
+                    <p>Montage vidéo d'un spot publicitaire dynamique sous Premiere Pro pour Kisen, une marque de bière originaire d'Okinawa (Japon).</p>
+                    <span class="project-link">Découvrir le projet →</span>
+                    <div class="project-tags">
+                        <span>Premiere Pro</span>
+                    </div>
+                </div>
+            </a>
+            <a href="project-scary.html" class="project-card video-card">
+                <img src="assets/scary_video_thumb.png" alt="Aperçu Scary Video" class="project-image-preview">
+                <div class="project-info">
+                    <h4>Scary Video — After Effects <span class="project-date">· 2025</span></h4>
+                    <p>Création d'une animation d'ambiance 3D sous After Effects, avec la contrainte d'utiliser uniquement l'espace tridimensionnel natif et des projecteurs virtuels.</p>
+                    <span class="project-link">Découvrir le projet →</span>
+                    <div class="project-tags">
+                        <span>After Effects</span>
+                    </div>
+                </div>
+            </a>
+            <a href="project-why.html" class="project-card video-card">
+                <img src="assets/why_thumb.png" alt="Aperçu Why — Vidéo Cinématique" class="project-image-preview">
+                <div class="project-info">
+                    <h4>Why — Clip Cinématique <span class="project-date">· 2025</span></h4>
+                    <p>Réalisation d'un clip musical libre calé de bout en bout sur le rythme d'une chanson et rédaction du dossier technique.</p>
+                    <span class="project-link">Découvrir le projet →</span>
+                    <div class="project-tags">
+                        <span>Premiere Pro</span>
+                    </div>
+                </div>
+            </a>
+            <a href="project-evry.html" class="project-card video-card">
+                <img src="assets/arene_evry_thumb.png" alt="Aperçu Arène d'Évry" class="project-image-preview">
+                <div class="project-info">
+                    <h4>Vidéo Promo — Arène d'Évry <span class="project-date">· 2026</span></h4>
+                    <p>Montage d'une vidéo promotionnelle rythmée pour l'Arène d'Évry sous Premiere Pro, destinée aux réseaux sociaux.</p>
+                    <span class="project-link">Découvrir le projet →</span>
+                    <div class="project-tags">
+                        <span>Premiere Pro</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    
+        <div class="category-title">
+            <h3>Développement Web & UI/UX</h3>
+        </div>
+        <div class="projects-grid">
+            <a href="project-symfony.html" class="project-card web-card">
+                <img src="assets/screenshot_dashboard.png" alt="Aperçu AquaSite" class="project-image-preview">
+                <div class="project-info">
+                    <h4>AquaSite — Symfony & D3.js <span class="project-date">· 2026</span></h4>
+                    <p>Application web réalisée en collaboration avec la filière Génie Biologique (GB). Cette application web permet la gestion et le suivi physico-chimique de leurs aquariums.</p>
+                    <span class="project-link">Découvrir le projet →</span>
+                    <div class="project-tags">
+                        <span>PHP</span>
+                        <span>Symfony</span>
+                        <span>D3.js</span>
+                        <span>Docker</span>
+                    </div>
+                </div>
+            </a>
+            <a href="project-wordpress.html" class="project-card web-card">
+                <img src="assets/Wordpress.png" alt="Aperçu WordPress" class="project-image-preview">
+                <div class="project-info">
+                    <h4>WordPress — Site Thématique Piano <span class="project-date">· 2025</span></h4>
+                    <p>Création d'un site d'information sous WordPress dédié à l'univers du piano, développé en local puis déployé sur Alwaysdata.</p>
+                    <span class="project-link">Découvrir le projet →</span>
+                    <div class="project-tags">
+                        <span>WordPress</span>
+                        <span>Docker</span>
+                        <span>Alwaysdata</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    
+
+    </section>
+
+    <section id="about" class="about-section">
+        <h2 class="section-title">À Propos</h2>
+        <div class="about-content">
+            <div class="about-text" style="max-width: 800px; margin: 0 auto; text-align: center; width: 100%;">
+                <h3>Étudiant MMI & Créatif</h3>
+                <p>Je m'appelle Willem Dulormne, et je suis actuellement élève en deuxième année de MMI (Métiers du Multimédia et de l'Internet). Passionné par les univers numériques et interactifs, je consacre une grande partie de mon temps à mes passions principales : la création audiovisuelle et le développement web.</p>
+                <a href="assets/cv_willem_montage.pdf" class="cta-button" target="_blank" rel="noopener noreferrer" style="margin-top: 2rem; display: inline-block;">Télécharger mon CV (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2 class="section-title">Mes compétences</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Design Graphique & UI/UX</h3>
+                <p>Conception d'identités visuelles, retouches d'images et modélisation d'interfaces centrées sur l'utilisateur. Création de chartes graphiques, de maquettes interactives et de visuels vectoriels :</p>
+                <div class="service-tags-list">
+                    <span>Figma</span>
+                    <span>Photoshop</span>
+                    <span>Illustrator</span>
+                    <span>InDesign</span>
+                </div>
+            </div>
+            <div class="service-card" style="border-top: 1px solid var(--accent-color);">
+                <h3>Montage Vidéo</h3>
+                <p>Création d'édits dynamiques, de clips rythmés et de vidéos promotionnelles. Maîtrise de la chaîne de montage (rythme visuel, variations de vitesse, transitions) sur mes applications de prédilection :</p>
+                <div class="service-tags-list">
+                    <span>Premiere Pro</span>
+                    <span>CapCut</span>
+                    <span>After Effects</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <h3>Développement Web & Logiciel</h3>
+                <p>Conception d'interfaces interactives modernes et programmation de solutions logicielles orientées objet et web via mes langages et outils maîtrisés :</p>
+                <div class="service-tags-list">
+                    <span>Java</span>
+                    <span>PHP</span>
+                    <span>JavaScript</span>
+                    <span>HTML5 / CSS3</span>
+                    <span>SQL</span>
+                    <span>Git / GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Contactez-moi</h2>
+        <div class="contact-container">
+            <form class="contact-form" id="contact-form">
+                <!-- Clé Web3Forms — https://web3forms.com/#start -->
+                <input type="hidden" name="access_key" id="w3f-key" value="259ab05c-6942-49bb-ae22-453ddce490dd">
+                <input type="hidden" name="subject" value="Nouveau message depuis le Portfolio de Willem Dulormne">
+                <input type="hidden" name="from_name" value="Portfolio Willem Dulormne">
+                <div class="input-group">
+                    <input type="text" id="name" name="name" placeholder=" " required>
+                    <label for="name">Votre Nom</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">Votre Email</label>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+                    <label for="message">Votre Message</label>
+                </div>
+                <button type="submit" class="cta-button submit-btn" id="submit-btn">Envoyer</button>
+                <div id="form-feedback" style="display:none;"></div>
+            </form>
+            <div class="contact-info">
+                <h3>Restons connectés</h3>
+                <p>N'hésitez pas à me contacter pour toute collaboration, projet créatif ou simple échange d'idées.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/willem-dulormne-742064342/" class="social-icon" target="_blank" rel="noopener noreferrer" title="LinkedIn">In</a>
+                    <a href="https://github.com/WillemUpec" class="social-icon" target="_blank" rel="noopener noreferrer" title="GitHub">GH</a>
+                </div>
+                <p class="direct-email">willem.dulormne@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Willem Dulormne.</p>
+    </footer>
+
+    <script src="script.js?v=3.5"></script>
+</body>
+</html>

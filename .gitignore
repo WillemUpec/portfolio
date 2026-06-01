@@ -1,0 +1,9 @@
+# Fichiers vidéos trop lourds pour GitHub (limite de 100 Mo)
+assets/why_video.mp4
+
+# Exclure les fichiers de configuration de production contenant des secrets
+Symfony/.env.alwaysdata
+Symfony/deploy.ps1
+Wordpress/wp-config-alwaysdata.php
+Wordpress/deploy.ps1
+Wordpress/db.sql
