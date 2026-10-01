@@ -209,24 +209,41 @@
 
         <div class="detail-container">
             <!-- Capture d'écran réelle du site WordPress en production -->
-            <div class="gallery-container">
-                <div class="main-screenshot">
-                    <img id="featured-screenshot" src="assets/Wordpress.png" alt="Site WordPress - Accueil Piano">
+            <div class="pc-mockup-wrapper">
+                <div class="pc-mockup">
+                    <div class="pc-browser-bar">
+                        <div class="pc-browser-dots">
+                            <span class="pc-dot pc-dot-red"></span>
+                            <span class="pc-dot pc-dot-yellow"></span>
+                            <span class="pc-dot pc-dot-green"></span>
+                        </div>
+                        <div class="pc-browser-address">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            <span id="url-address">https://dulormne.alwaysdata.net/td/</span>
+                        </div>
+                    </div>
+                    <div class="pc-screen-display">
+                        <img id="featured-screenshot" src="assets/Wordpress.png" alt="Site WordPress - Accueil Piano">
+                    </div>
                 </div>
-                <div class="thumbnails-grid">
-                    <div class="thumbnail active" onclick="changeScreenshot('assets/Wordpress.png', this)">
+                <div class="pc-laptop-base">
+                    <div class="pc-laptop-notch"></div>
+                </div>
+
+                <div class="thumbnails-grid" style="margin-top: 1.5rem;">
+                    <div class="thumbnail active" onclick="changeScreenshot('assets/Wordpress.png', 'https://dulormne.alwaysdata.net/td/', this)">
                         <img src="assets/Wordpress.png" alt="Site WordPress - Blog & Accueil">
                         <span class="thumb-caption">Blog / Accueil</span>
                     </div>
-                    <div class="thumbnail" onclick="changeScreenshot('assets/Wordpress1.png', this)">
+                    <div class="thumbnail" onclick="changeScreenshot('assets/Wordpress1.png', 'https://dulormne.alwaysdata.net/td/pianistes', this)">
                         <img src="assets/Wordpress1.png" alt="Site WordPress - Pianistes de la semaine">
                         <span class="thumb-caption">Pianistes</span>
                     </div>
-                    <div class="thumbnail" onclick="changeScreenshot('assets/wordpress_screenshot_3.png', this)">
+                    <div class="thumbnail" onclick="changeScreenshot('assets/wordpress_screenshot_3.png', 'https://dulormne.alwaysdata.net/td/contact', this)">
                         <img src="assets/wordpress_screenshot_3.png" alt="Site WordPress - Page Contact">
                         <span class="thumb-caption">Contact</span>
                     </div>
-                    <div class="thumbnail" onclick="changeScreenshot('assets/wordpress_screenshot_4.png', this)">
+                    <div class="thumbnail" onclick="changeScreenshot('assets/wordpress_screenshot_4.png', 'https://dulormne.alwaysdata.net/td/article-sakamoto', this)">
                         <img src="assets/wordpress_screenshot_4.png" alt="Site WordPress - Zoom sur Ryuichi Sakamoto">
                         <span class="thumb-caption">Article Zoom</span>
                     </div>
@@ -288,12 +305,14 @@
     </footer>
     <script src="script.js?v=3.5"></script>
     <script>
-        function changeScreenshot(src, element) {
+        function changeScreenshot(src, url, element) {
             const featured = document.getElementById('featured-screenshot');
+            const urlAddr = document.getElementById('url-address');
             featured.style.opacity = '0';
             
             setTimeout(() => {
                 featured.src = src;
+                if (urlAddr && url) urlAddr.textContent = url;
                 featured.style.opacity = '1';
             }, 250);
             
